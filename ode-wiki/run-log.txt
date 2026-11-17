@@ -1,0 +1,11 @@
+2026-11-17 | 實際執行紀錄
+本次為單次 LLM 整理與可重現程式檢查，非自動連網 Agent；v1 刻意注入錯誤用於測試回圈。
+INGEST PASS：5 篇不同 URL、5 筆完整且唯一的 Wiki 條目。
+RETRIEVE PASS：依指定教學路徑取得 S01–S05，未加入無來源條目。
+DRAFT v1：刻意移除 S02 的常數解警語（負向測試）。
+CHECK v1 FAIL：S02
+REGENERATE：從已查核 Wiki 取回 S02，修正該頁，不改其他頁。
+CHECK v2 PASS：5/5 頁均有來源、公式、例題、驗證與警語。
+MATH PASS：5/5 條代表式抽樣檢查通過；S01、S04 為代數導數式一致性檢查，完整手算驗證見 Wiki。
+PUBLISH：輸出 Wiki HTML、8 張教學 HTML 簡報及 JSON 資料；正式公開網址仍需部署後確認。
+HTML PASS：8 張投影片標記、5 個 Wiki 條目錨點及 5 個對應簡報連結均存在。

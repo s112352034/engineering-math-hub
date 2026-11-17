@@ -1,0 +1,92 @@
+[
+  {
+    "id": "S01",
+    "slug": "basics",
+    "title": "微分方程與初始條件",
+    "source": "OpenStax, Calculus Volume 2, §4.1 Basics of Differential Equations",
+    "url": "https://openstax.org/books/calculus-volume-2/pages/4-1-basics-of-differential-equations",
+    "tags": [
+      "基本觀念",
+      "初值"
+    ],
+    "note": "一階常微分方程包含未知函數 y(x) 和一階導數。通解保留任意常數；初始條件協助選出符合條件的特解。",
+    "formula": "y′ = f(x,y)，y(x₀)=y₀",
+    "steps": "先確認最高導數階數；找通解；代入初值求常數；把解與導數代回原式。",
+    "example": "y′=6x，y(0)=2",
+    "solution": "積分得 y=3x²+C；由初值 C=2，故 y=3x²+2。",
+    "caution": "驗證時須同時滿足方程及初始條件。",
+    "verify": "y′=6x，且 y(0)=2。"
+  },
+  {
+    "id": "S02",
+    "slug": "separable",
+    "title": "分離變數法",
+    "source": "OpenStax, Calculus Volume 2, §4.3 Separable Equations",
+    "url": "https://openstax.org/books/calculus-volume-2/pages/4-3-separable-equations",
+    "tags": [
+      "分離變數",
+      "常數解"
+    ],
+    "note": "若導數能寫成 x 的函數乘上 y 的函數，可將兩變數的項分開積分。先處理使 y 函數為零的常數解。",
+    "formula": "dy/dx=f(x)g(y) → dy/g(y)=f(x)dx（g(y)≠0）",
+    "steps": "辨識乘積形式；檢查 g(y)=0；分離後積分；代初值並確認定義域。",
+    "example": "y′=4xy，y(0)=3",
+    "solution": "對非零解積分：ln|y|=2x²+C。初值為正，得 y=3e^(2x²)。",
+    "caution": "除以 g(y) 前檢查 g(y)=0 的常數解；本例 y=0 是原方程的解但不符合初值。",
+    "verify": "y′=4x·3e^(2x²)=4xy；y(0)=3；零解也符合原方程。"
+  },
+  {
+    "id": "S03",
+    "slug": "linear",
+    "title": "一階線性方程",
+    "source": "OpenStax, Calculus Volume 2, §4.5 First-Order Linear Equations",
+    "url": "https://openstax.org/books/calculus-volume-2/pages/4-5-first-order-linear-equations",
+    "tags": [
+      "線性",
+      "積分因子"
+    ],
+    "note": "把一階線性方程標準化後，乘積分因子可把左式合併成乘積的導數，再透過積分求解。",
+    "formula": "y′+P(x)y=Q(x)；μ=e^(∫P dx)；(μy)′=μQ",
+    "steps": "化為標準式；算 μ；兩側乘 μ 並積分；除回 μ，代入初值。",
+    "example": "y′+3y=6，y(0)=4",
+    "solution": "μ=e^(3x)，(e^(3x)y)′=6e^(3x)。積分得 y=2+Ce^(−3x)，C=2。",
+    "caution": "標準化後才求積分因子；在 P、Q 連續且原式有效的區間解題。",
+    "verify": "y′=−6e^(−3x)，y′+3y=6，y(0)=4。"
+  },
+  {
+    "id": "S04",
+    "slug": "exact",
+    "title": "正合微分方程",
+    "source": "Paul Dawkins, Paul's Online Notes, §2.3 Exact Equations",
+    "url": "https://tutorial.math.lamar.edu/classes/de/exact.aspx",
+    "tags": [
+      "正合",
+      "偏微分"
+    ],
+    "note": "將方程寫成 M dx+N dy=0；在合適區域，若交叉偏導相等，尋找位勢函數 F，使其兩個偏導分別為 M、N。",
+    "formula": "Mᵧ=Nₓ；Fₓ=M，Fᵧ=N → F(x,y)=C",
+    "steps": "在單連通區域檢查連續一階偏導及正合條件；對 M 積分 x，加入 g(y)；對 y 偏微分求 g；寫隱式解。",
+    "example": "(3x²+2y)dx+(2x+4y)dy=0",
+    "solution": "Mᵧ=Nₓ=2。F=x³+2xy+g(y)，g′(y)=4y，故 x³+2xy+2y²=C。",
+    "caution": "對 x 積分後保留 g(y)，不可直接把它當常數。",
+    "verify": "Fₓ=3x²+2y，Fᵧ=2x+4y，完全還原 M、N。"
+  },
+  {
+    "id": "S05",
+    "slug": "bernoulli",
+    "title": "Bernoulli 方程",
+    "source": "Paul Dawkins, Paul's Online Notes, §2.4 Bernoulli Differential Equations",
+    "url": "https://tutorial.math.lamar.edu/classes/de/bernoulli.aspx",
+    "tags": [
+      "Bernoulli",
+      "變數變換"
+    ],
+    "note": "含有 y 的冪次的 Bernoulli 方程，可透過 v=y^(1−n) 化為一階線性方程；先處理原方程的定義限制。",
+    "formula": "y′+Py=Qyⁿ；v=y^(1−n) → v′+(1−n)Pv=(1−n)Q",
+    "steps": "檢查 n≠0、1 及 y 的定義域；在可變換的區間令 v=y^(1−n)；用線性法解 v；換回 y 並檢查原式。",
+    "example": "y′+2y=y²，y(0)=2/3",
+    "solution": "令 v=1/y，則 v′−2v=−1。解 v=1/2+Ce^(2x)，初值 v(0)=3/2 得 C=1，y=1/(1/2+e^(2x))。",
+    "caution": "變換可能排除零解；本例 y=0 亦為原方程的解，但不符合初值；分母不可為零。",
+    "verify": "令 d=1/2+e^(2x)，y′=−2e^(2x)/d²，所以 y′+2y=1/d²=y²；y(0)=2/3。"
+  }
+]
